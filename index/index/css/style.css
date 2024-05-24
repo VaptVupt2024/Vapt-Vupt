@@ -1,0 +1,3286 @@
+/* ================================================================ */
+/* FONTES */
+/* ================================================================ */
+
+@font-face {
+  font-family: "Roobert TWHINT Bold";
+  src: url(../../base/Fonts/Roobert\ TWHINT\ Bold.ttf)
+}
+@font-face {
+  font-family: "Roobert TWHINT Regular";
+  src: url(../../base/Fonts/Roobert\ TWHINT\ Regular.ttf)
+}
+@font-face {
+  font-family: "Roobert TWHINT SemiBold";
+  src: url(../../base/Fonts/Roobert\ TWHINT\ SemiBold.ttf)
+}
+@font-face {
+  font-family: "PP Mori SemiBold";
+  src: url(../../base/Fonts/PP\ Mori\ SemiBold.ttf)
+}
+
+/* ================================================================ */
+/* TUDO BASE */
+/* ================================================================ */
+
+html, body{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+body{
+  overflow: hidden;
+}
+
+
+
+
+/* -------------MUDAR O STYLE DO SCROLLBAR---------------- */
+
+  body::-webkit-scrollbar {
+    width: 10px;               /* width of the entire scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #ffffff;        /* color of the tracking area */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #1D4ABE;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+  }
+
+  body::-webkit-scrollbar-thumb:hover {
+    background-color: #2B66FF;
+  }
+
+
+  /* -------------LIBRAS---------------- */
+  div[vw].enabled{
+    top: auto !important;
+    bottom: 1vh !important;
+    transform: translateX(calc(0% - 1vh)) !important;
+  }
+  
+
+
+
+
+
+
+
+
+/* ================================================================ */
+/* MENU */
+/* ================================================================ */
+
+
+
+/* -------------MENU---------------- */
+
+nav{
+  position: fixed;
+  margin: 0 auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translate(-50% -50%);
+  margin-top: 3vh;
+  width: 90%;
+  height: 90px;
+  transition: all 0.3s;
+  z-index: 1000000;
+  background-color: #ffffff;
+  border-radius: 2vh;
+  box-shadow: 0px 4px 20px 0px rgba(0, 17, 58, 0.1);
+  overflow: hidden;
+}
+.nav-up {
+  top: -500px !important;
+}
+@-webkit-keyframes slide-in-blurred-top {
+  0% {
+    -webkit-transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+            transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+    -webkit-filter: blur(40px);
+            filter: blur(40px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+            transform: translateY(0) scaleY(1) scaleX(1);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-blurred-top {
+  0% {
+    -webkit-transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+            transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+    -webkit-filter: blur(40px);
+            filter: blur(40px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+            transform: translateY(0) scaleY(1) scaleX(1);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+#menu_hide{
+  transition: 1s;
+  -webkit-animation: slide-in-blurred-top 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+  animation: slide-in-blurred-top 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+
+.menu_dentro_mobile{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 90px;
+}
+
+
+/* -------------LOGOS---------------- */
+
+.logos_nav{
+  margin-left: 2.5vw;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.linha_divide{
+  margin-left: 2.5vh;
+  height: 40%;
+}
+.logo_vapt{
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo_porto{
+  height: 40%;
+  margin-left: 2.5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo_nav{
+  height: 100%;
+}
+
+
+
+/* -------------LINKS---------------- */
+
+.anchors_nav{
+  margin-right: 1.5vw;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.anchor{
+  font-family: "Roobert TWHINT SemiBold";
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(0.875rem, 0.8214rem + 0.2679vw, 1.25rem);
+  line-height: 24px;
+  text-align: center;
+  text-decoration: none;
+   
+  color: #00113a;
+  margin-right: 2vw;
+}
+
+/* ---LINKS:HOVER--- */
+
+.menu-item {
+  font-weight: 400;
+  position: relative;
+  display: inline-block;
+  text-indent: 0;
+  cursor: pointer;
+  z-index: 100;
+  pointer-events: auto;
+}
+.menu-item::after {
+  border-radius: 10px;
+  content: '';
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%;
+  height: 3.5px;
+  background: #2B66FF;
+  z-index: -1;
+  transform: scale3d(0.001,1,1);
+  opacity: 0;
+  transform-origin: 100% 50%;
+  transition: transform 0.3s cubic-bezier(0.2,1,0.3,1), opacity 0.1s 0.2s linear;
+}
+.menu-item.menu-item--active::after,
+.content--menu .menu-item.menu-item--active:hover::after,
+.menu-item:hover::after {
+  opacity: 1;
+  transform: scale3d(1,1,1);
+  transform-origin: 0% 50%;
+  transition: transform 0.7s cubic-bezier(0.2,1,0.3,1), opacity 0.1s linear;
+}
+.content--menu .menu-item::after {
+  transform-origin: 0% 50%;
+}
+.content--menu .menu-item:hover::after {
+  transform: scale3d(0.15,1,1);
+}
+.splitting .word {
+  text-indent: 0;
+}
+.menu-item span {
+  pointer-events: none;
+}
+
+
+
+/* -------------BOTÕES---------------- */
+
+.buttons_login{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75%;
+}
+.btn_animacao {
+  --duration: .44s;
+  transform: translateY(var(--y, 0px));
+  transition: transform var(--duration), box-shadow var(--duration);
+}
+.btn_animacao div {
+  overflow: hidden;
+  text-shadow: 0 var(--font-size) 0 var(--text);
+}
+.btn_animacao div span {
+  transition: transform var(--duration) ease;
+  transform: translateY(var(--m, 0px));
+}
+.btn_animacao div span:nth-child(1) {
+  transition-delay: 0.05s;
+}
+.btn_animacao div span:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.btn_animacao div span:nth-child(3) {
+  transition-delay: 0.15s;
+}
+.btn_animacao div span:nth-child(4) {
+  transition-delay: 0.2s;
+}
+.btn_animacao div span:nth-child(5) {
+  transition-delay: 0.25s;
+}
+.btn_animacao div span:nth-child(6) {
+  transition-delay: 0.3s;
+}
+.btn_animacao div span:nth-child(7) {
+  transition-delay: 0.35s;
+}
+.btn_animacao div span:nth-child(8) {
+  transition-delay: 0.4s;
+}
+.btn_animacao div span:nth-child(9) {
+  transition-delay: 0.45s;
+}
+.btn_animacao div span:nth-child(10) {
+  transition-delay: 0.5s;
+}
+.btn_animacao div span:nth-child(11) {
+  transition-delay: 0.55s;
+}
+.btn_animacao:hover span {
+  --m: calc(var(--font-size) * -1);
+}
+
+.btn_login {
+  background-color: #00113a;
+  color: #ffffff;
+  font-family: "Roobert TWHINT Bold";
+  text-decoration: none;
+  width: 129px;
+  max-width: 15vh;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2vh;
+ 
+  font-weight: 600;
+  font-size: clamp(1rem, 0.9643rem + 0.1786vw, 1.25rem);
+  line-height: auto;
+  text-align: center;
+
+  position: relative;
+  z-index: 1;
+  margin-left: 3px;
+  transition: 0.2s;
+
+  --text: #ffffff;
+  --font-size: clamp(1rem, 0.9643rem + 0.1786vw, 1.25rem);
+  --background: #00113a;
+  outline: none;
+  font-size: var(--font-size);
+  background: var(--background);
+  box-shadow: var(--shadow);
+  border: 4px solid transparent;
+
+  margin-right: 0.8vw;
+}
+.btn_cadastro {
+  background-color: #2B66FF;
+  color: #ffffff;
+  font-family: "Roobert TWHINT Bold";
+  text-decoration: none;
+  width: 185px;
+  max-width: 25vh;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2vh;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(1rem, 0.9643rem + 0.1786vw, 1.25rem);
+  line-height: auto;
+  text-align: center;
+ 
+
+  position: relative;
+  z-index: 1;
+  margin-left: 3px;
+  transition: 0.2s;
+
+  --text: #ffffff;
+  --font-size: clamp(1rem, 0.9643rem + 0.1786vw, 1.25rem);
+  --background: #2B66FF;
+  outline: none;
+  font-size: var(--font-size);
+  background: var(--background);
+  box-shadow: var(--shadow);
+  border: 4px solid transparent;
+}
+.btn_cadastro:hover {
+  --shadow: var(--shadow-hover);
+  background-color: #ffffff;
+  border: 4px solid #2B66FF;
+  --text: #2B66FF;
+  font-weight: 900;
+}
+
+/* ---BTN - MOBILE--- */
+
+.btn_cadastro2 {
+  background-color: #2B66FF;
+  color: #ffffff;
+  font-family: "Roobert TWHINT Bold";
+  text-decoration: none;
+  width: 93px;
+  max-width: 25vh;
+  height: 80%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2vh;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: auto;
+  text-align: center;
+ 
+
+  position: relative;
+  z-index: 1;
+  margin-left: 3px;
+  transition: 0.2s;
+
+  --text: #ffffff;
+  --font-size: 16px;
+  --background: #2B66FF;
+  outline: none;
+  font-size: var(--font-size);
+  background: var(--background);
+  box-shadow: var(--shadow);
+  border: 4px solid transparent;
+}
+.btn_cadastro2:hover {
+  --shadow: var(--shadow-hover);
+  background-color: #ffffff;
+  border: 4px solid #2B66FF;
+  --text: #2B66FF;
+  font-weight: 900;
+}
+@media (max-width: 1500px){
+  .logo_porto{
+    display: none;
+  }
+  .linha_divide{
+    display: none;
+  }
+  .buttons_login{
+    height: 48px;
+  }
+  .anchors_nav{
+    margin-right: 2vw;
+  }
+  .logo_porto2{
+    display: flex !important;
+  }
+}
+@media (max-width: 1200px){
+  .anchors{
+    display: none;
+  }
+  .burger-container{
+    display: flex !important;
+  }
+}
+
+@media (max-width: 767px){
+  nav{
+    height: 72px;
+    border-radius: 10px;
+  }
+  .menu_dentro_mobile{
+    height: 72px;
+  }
+  .btn_cadastro2{
+    display: flex;
+    border-radius: 10px;
+  }
+  .btn_cadastro{
+    display: none;
+  }
+  .btn_login{
+    display: none;
+  }
+  .logo_vapt{
+    height: 5vw;
+  }
+  .burger-container{
+    margin-right: 10px !important;
+  }
+  .logos_nav{
+    margin-left: 3.5vw;
+  }
+  .anchors_nav{
+    margin-right: 3.5vw;
+  }
+}
+@media (max-width: 555px){
+  .menu{
+    width: 100% !important;
+    margin-left: 0vw;
+  }
+  .sitemap2{
+    width: 100%;
+  }
+  .sitemap3{
+    display: none !important;
+  }
+  .sitemap_titu2{
+    width: 100% !important;
+  }
+  .anchor3{
+    width: 100% !important;
+  }
+}
+
+.btn_animacao div {
+  display: flex;
+}
+.btn_animacao div span {
+  display: block;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  font-style: normal;
+}
+.btn_login:hover {
+  --shadow: var(--shadow-hover);
+  background-color: #ffffff;
+  border: 4px solid #00113a;
+  --text: #00113a;
+  font-weight: 900;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ================================================================ */
+/* MENU MOBILE */
+/* ================================================================ */
+
+.burger-container {
+  padding: 0;
+  position: relative;
+  display: inline-block;
+  height: 48px;
+  width: 48px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+  transform: rotate(0deg);
+  transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  background-color: #EDEEF1;
+  border-radius: 10px;
+  margin-right: 18px;
+}
+.burger-container #burger {
+  height: 100%;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.burger-container #burger .bar {
+  width: 20px;
+  height: 4px;
+  border-radius: 100px;
+  display: block;
+  position: relative;
+  background: #00113A;
+  transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition-delay: 0s;
+}
+.burger-container #burger .bar.topBar {
+  transform: translateY(0px) rotate(0deg);
+  margin-top: -4px;
+}
+.burger-container #burger .bar.btmBar {
+  transform: translateY(6px) rotate(0deg);
+  margin-top: -2px;
+}
+
+
+
+
+
+ul{
+  padding-inline-start: 0;
+}
+#menu_mobile_hide{
+  transition: 0.8s;
+}
+nav ul.menu {
+  position: relative;
+  list-style: none;
+
+  width: 65%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+nav.menu-opened {
+  height: 450px;
+  background-color: #ffffff;
+  transition: all 0.3s ease-in, background 0.5s ease-in;
+  display: block;
+  transition-delay: 0.25s;
+}
+nav.menu-opened .burger-container {
+}
+nav.menu-opened .burger-container #burger .bar {
+  transition: all 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  transition-delay: 0.1s;
+}
+nav.menu-opened .burger-container #burger .bar.topBar {
+  margin-top: 0px;
+}
+nav.menu-opened .burger-container #burger .bar.btmBar {
+  opacity: 0;
+  height: 0;
+}
+nav.menu-opened .ani_mob {
+  transform: scale(1) translateY(0px);
+  opacity: 1;
+}
+nav.menu-opened .ani_mob:nth-child(1) {
+  transition-delay: 0.27s;
+}
+nav.menu-opened .ani_mob:nth-child(2) {
+  transition-delay: 0.34s;
+}
+nav.menu-opened .ani_mob:nth-child(3) {
+  transition-delay: 0.41s;
+}
+nav.menu-opened .ani_mob:nth-child(4) {
+  transition-delay: 0.48s;
+}
+nav.menu-opened .ani_mob:nth-child(5) {
+  transition-delay: 0.55s;
+}
+nav.menu-opened .ani_mob:nth-child(6) {
+  transition-delay: 0.62s;
+}
+nav.menu-opened .ani_mob:nth-child(7) {
+  transition-delay: 0.69s;
+}
+nav.menu-opened .ani_mob:nth-child(8) {
+  transition-delay: 0.76s;
+}
+nav.menu-opened .ani_mob:nth-child(9) {
+  transition-delay: 0.83s;
+}
+nav.menu-opened .ani_mob:nth-child(10) {
+  transition-delay: 0.9s;
+}
+
+
+.sitemap2{
+  display: flex;
+  flex-direction: column;
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+.sitemap3{
+  display: flex;
+  flex-direction: column;
+  margin-left: 5vw;
+}
+.sitemap_titu2{
+  /* Rectangle 242 (rectangle) */
+  width: 160px;
+  height: 42px;
+  margin: 0;
+  
+  font-family: "Roobert TWHINT Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: auto;
+  text-align: left;
+  
+  color: #00113a;
+  display: flex;
+  align-items: center;
+}
+.ani_mob{
+  margin-top: 5px;
+  transform: scale(1.15) translateY(-30px);
+  opacity: 0;
+  transition: transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99), opacity 0.6s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+}
+.anchor3{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: 2px solid rgba(0, 17, 58, 0.08);
+
+  border-color: rgba(0, 17, 58, 0.08);
+  border-width: 0px 0px 2px 0px;
+
+  width: 160px;
+  height: 42px;
+  position: relative;
+  margin: 0;
+
+  font-family: "Roobert TWHINT SemiBold";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: auto;
+  text-align: left;
+  text-decoration: none;
+   
+  color: rgba(0, 17, 58, 0.5);
+  display: flex;
+  align-items: center;
+  transition: 0.5s;
+}
+.anchor3:hover{
+  color: rgb(0, 17, 58);
+}
+
+.logo_porto2{
+  height: 34px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: 33px;
+  margin-top: 30vh;
+  right: 33px;
+  display: none;
+}
+.logo_nav2{
+  height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+  
+/* ================================================================ */
+/* INÍCIO */
+/* ================================================================ */
+
+
+
+/* -------------BASE---------------- */
+
+.inicio_sticky{
+  height: 105vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 10;
+}
+.tela_inicio_desk{
+  width: 100%;
+  height: 105vh;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.scoll_down{
+  position: absolute;
+  bottom: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media (max-width:999px) {
+  .scoll_down{
+    bottom: 15vh;
+  }
+}
+
+
+
+/* -------------PARALLAX---------------- */
+
+.items__inner {
+  position: relative;
+  width: 100%;
+  height: 105vh;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+.items__layer .items__item {
+  position: absolute;
+  width: 120vw;
+  height: 120vh;
+}
+.items__layer .items__item:after {
+  content: attr(data-title);
+  position: absolute;
+  line-height: 20px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.5s ease;
+  visibility: hidden;
+  opacity: 0;
+}
+.items__layer .items__item:hover:after {
+  visibility: visible;
+  opacity: 1;
+}
+.layer{
+  width: 100%;
+  height: 100%;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* ---ACESSIBILIDADE--- */
+
+.items__layer:nth-child(1){
+  pointer-events: none;
+}
+.items__layer:nth-child(2){
+  pointer-events: all;
+}
+.items__layer:nth-child(3){
+  pointer-events: none;
+}
+.items__layer:nth-child(4){
+  pointer-events: none;
+}
+.items__layer:nth-child(5){
+  pointer-events: none;
+}
+
+/* ---IMAGEM 1--- */
+
+.items__layer:nth-child(1) .items__item {
+  width: 120vw;
+  height: 120vh;
+  background: url('../img/parallax/fundo.png'), 38% 50% / cover no-repeat;
+  background-position: 38% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-animation: slide-in-bck-center 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+  animation: slide-in-bck-center 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+  pointer-events: none;
+}
+.items__layer:nth-child(1) .items__item:after {
+  top: 0;
+  left: 0;
+}
+
+/* ---TEXTOS--- */
+
+.items__layer:nth-child(2) .items__item {
+  top: -20vh;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.items__layer:nth-child(2) .items__item:after {
+  top: 0;
+  left: 0;
+}
+.overflow_txt_parallax{
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.txt_parallax{
+  margin: 0;
+  font-family: "Roobert TWHINT Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(3rem, 2.2857rem + 3.5714vw, 8rem);
+  line-height: 0.89;
+  letter-spacing: -0.04em;
+  text-align: center;
+  text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  -webkit-animation: slide-in-blurred-bottom 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1s both;
+  animation: slide-in-blurred-bottom 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1s both;
+}
+.txt_parallax2{
+  margin: 0;
+  font-family: "Roobert TWHINT Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(3rem, 2.2857rem + 3.5714vw, 8rem);
+  line-height: 0.89;
+  letter-spacing: -0.04em;
+  text-align: center;
+  text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  -webkit-animation: slide-in-blurred-bottom 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1.2s both;
+  animation: slide-in-blurred-bottom 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1.2s both;
+}
+.textos_parallax_mobile{
+  display: none;
+  width: 88%;
+}
+.txt_parallax3{
+  margin: 0;
+  font-family: "Roobert TWHINT Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(2.75rem, 1.7934rem + 4.0816vw, 3.75rem);
+  line-height: 0.89;
+  letter-spacing: -0.04em;
+  text-align: left;
+  color: #ffffff;
+  text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  -webkit-animation: slide-in-blurred-bottom 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1.2s both;
+  animation: slide-in-blurred-bottom 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 1.2s both;
+}
+
+@media(max-width:767px) {
+  .textos_parallax_mobile{
+    display:block;
+  }
+  .textos_parallax_desk{
+    display: none;
+  }
+}
+
+@-webkit-keyframes slide-in-blurred-bottom {
+  0% {
+    -webkit-transform: translateY(1000px);
+            transform: translateY(1000px);
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    opacity: 1;
+  }
+}
+@keyframes slide-in-blurred-bottom {
+  0% {
+    -webkit-transform: translateY(1000px);
+            transform: translateY(1000px);
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    opacity: 1;
+  }
+}
+
+/* ---IMAGEM 2--- */
+
+.items__layer:nth-child(3) .items__item {
+  width: 120vw;
+  height: 120vh;
+  background: url('../img/parallax/fundo2.png'), 38% 50% / cover no-repeat;
+  background-position: 38% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-animation: slide-in-bck-center 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0.1s both;
+  animation: slide-in-bck-center 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0.1s both;
+  pointer-events: none;
+}
+.items__layer:nth-child(3) .items__item:after {
+  bottom: 0;
+  left: 0;
+}
+
+/* ---IMAGEM 3--- */
+
+.items__layer:nth-child(4) .items__item {
+  width: 120vw;
+  height: 120vh;
+  background: url('../img/parallax/fundo3.png'), 38% 50% / cover no-repeat;
+  background-position: 38% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-animation: slide-in-bck-center 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0.2s both;
+  animation: slide-in-bck-center 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0.2s both;
+  pointer-events: none;
+}
+.items__layer:nth-child(4) .items__item:after {
+  bottom: 0;
+  left: 0;
+}
+
+/* ---IMAGEM 4--- */
+
+.items__layer:nth-child(5) .items__item {
+  width: 120vw;
+  height: 120vh;
+  background: url('../img/parallax/fundo4.png'), 38% 50% / cover no-repeat;
+  background-position: 38% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-animation: slide-in-bck-center 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0.3s both;
+  animation: slide-in-bck-center 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0.3s both;
+  pointer-events: none;
+}
+.items__layer:nth-child(5) .items__item:after {
+  bottom: 0;
+  left: 0;
+}
+@-webkit-keyframes slide-in-bck-center {
+  0% {
+    transform: scale(5);
+    opacity: 0;
+    -webkit-filter: blur(40px);
+    filter: blur(40px);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+  }
+}
+@keyframes slide-in-bck-center {
+  0% {
+    transform: scale(5);
+    opacity: 0;
+    -webkit-filter: blur(40px);
+    filter: blur(40px);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+  
+/* ================================================================ */
+/* SOLUÇÃO */
+/* ================================================================ */
+
+/* ---BASE--- */
+.solucao{
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #fff;
+  z-index: 10;
+}
+
+/* ---TEXTO--- */
+
+.titu_solucao{
+  width: 80%;
+  font-family: "Roobert TWHINT Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(3rem, 2.2857rem + 3.5714vw, 8rem);
+  line-height: 0.89;
+  letter-spacing: -0.04em;
+  text-align: center;
+  color: #00113A;
+  margin-bottom: 40px;
+}
+.txt_solucao{
+  width: 65%;
+  font-family: "PP Mori SemiBold";
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(1.25rem, 1.1071rem + 0.7143vw, 2.25rem);
+  line-height: 1.3;
+  text-align: center;  
+  color: #667089;
+}
+@media (max-width: 767px){
+  .solucao{
+    height: 60vh;
+  }
+  .titu_solucao{
+    text-align: left;
+    width: 90%;
+    margin-bottom: 15px;
+  }
+  .txt_solucao{
+    text-align: left;
+    width: 90%;
+  }
+}
+
+.txt_solucao span{
+  color: #334161;
+  font-weight: 700;
+}
+.titu_solucao span{
+  color: #2B66FF;
+}
+
+
+
+
+
+
+
+
+
+
+  
+/* ================================================================ */
+/* VANTAGENS */
+/* ================================================================ */
+
+
+
+/* -------------ANCORA VANTAGEM---------------- */
+
+.section{
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  display: block;
+}
+
+.section1 {
+  background-color: transparent;
+}
+.section2 {
+  background-color: transparent;
+  margin-top: 75vh;
+}
+.section3 {
+  background-color: transparent;
+  margin-top: 160vh;
+}
+.section4 {
+  background-color: transparent;
+  margin-top: 205vh;
+}
+
+
+
+
+/* -------------BASE---------------- */
+
+.sticky_vantagens{
+  width: 100%;
+  height: 300vh;
+  display: flex;
+  justify-content: center;
+  z-index: 0;
+  position: relative;
+}
+.vantagens{
+  width: 95%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+/* -------------ESQUERDA - BASE---------------- */
+
+.esquerda_vantagens{
+  width: 35%;
+  height: 90%;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #F2F3F5;
+}
+
+/* ---ESQUERDA - CIMA--- */
+
+.esquerda_cima_overflow{
+  width: 100%;
+  height: 45%;
+  overflow: hidden;
+  position: relative;
+}
+.esquerda_cima{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: #2B66FF;
+}
+.esquerda_cima2{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: #1D4ABE;
+  clip-path: url(#my-clip2);
+  -webkit-clip-path: url(#my-clip2);
+}
+.esquerda_cima3{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: #0F2E7C;
+  clip-path: url(#my-clip3);
+  -webkit-clip-path: url(#my-clip3);
+}
+.esquerda_cima4{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: #00113A;
+  clip-path: url(#my-clip4);
+  -webkit-clip-path: url(#my-clip4);
+}
+.svg_clip_path2{
+  transform: scale(0, 1);
+  d: path('M 0 0 L 0 1000 L 1000 1000 L 1000 0 Z') !important;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+.svg_clip_path3{
+  transform: scale(0, 1);
+  d: path('M 0 0 L 0 1000 L 1000 1000 L 1000 0 Z') !important;
+  width: 100%;
+  height: 100%;
+}
+.svg_clip_path4{
+  transform: scale(0, 1);
+  d: path('M 0 0 L 0 1000 L 1000 1000 L 1000 0 Z') !important;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---ESQUERDA - CIMA - TEXTO--- */
+
+.esquerda_cima_sub_txt{
+  margin-top: 3vh;
+  width: 90%;
+
+  font-family: "Roobert TWHINT SemiBold";
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(0.875rem, 0.8214rem + 0.2679vw, 1.25rem);
+  line-height: 0.99;
+  letter-spacing: -0.04em;
+  text-align: left;
+   
+  color: rgba(255, 255, 255, 0.8999999761581421);
+}
+.esquerda_cima_sub_titu{
+  margin: 0;
+
+  font-family: "Roobert TWHINT Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(2rem, 1.7143rem + 1.4286vw, 4rem);
+  line-height: 0.99;
+  letter-spacing: -0.04em;
+  text-align: center;
+   
+  color: #ffffff;
+}
+.esquerda_cima_sub_txt2{
+  margin-bottom: 3vh;
+  width: 90%;
+
+  font-family: "Roobert TWHINT Bold";
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(0.875rem, 0.8214rem + 0.2679vw, 1.25rem);
+  line-height: 0.99;
+  letter-spacing: -0.04em;
+  text-align: right;
+   
+  color: rgba(255, 255, 255, 0.8999999761581421);
+}
+
+.mascara{
+  position: absolute; 
+  pointer-events:none;
+}
+
+/* ---ESQUERDA - BAIXO--- */
+
+.esquerda_baixo{
+  width: 100%;
+  height: 55%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.esquerda_baixo_textos{
+  width: 80%;
+  margin-top: 4vh;
+  position: relative;
+}
+.esquerda_baixo_txt{
+  margin-top: 0;
+  position: absolute;
+  width: 100%;
+
+  font-family: "PP Mori SemiBold";
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(0.9375rem, 0.8571rem + 0.4018vw, 1.5rem);
+  line-height: 1.3;
+  text-align: center;
+   
+  color: rgba(0, 17, 58, 0.6000000238418579);
+  background-color: #F2F3F5;
+  opacity: 1;
+}
+.esquerda_baixo_txt2{
+  margin-top: 0;
+  position: absolute;
+  width: 100%;
+
+  font-family: "PP Mori SemiBold";
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(0.9375rem, 0.8571rem + 0.4018vw, 1.5rem);
+  line-height: 1.3;
+  text-align: center;
+   
+  color: rgba(0, 17, 58, 0.6000000238418579);
+  background-color: #F2F3F5;
+  opacity: 0;
+  display: none;
+}
+.esquerda_baixo_txt3{
+  margin-top: 0;
+  position: absolute;
+  width: 100%;
+
+  font-family: "PP Mori SemiBold";
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(0.9375rem, 0.8571rem + 0.4018vw, 1.5rem);
+  line-height: 1.3;
+  text-align: center;
+   
+  color: rgba(0, 17, 58, 0.6000000238418579);
+  background-color: #F2F3F5;
+  opacity: 0;
+  display: none;
+}
+.esquerda_baixo_txt4{
+  margin-top: 0;
+  position: absolute;
+  width: 100%;
+
+  font-family: "PP Mori SemiBold";
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(0.9375rem, 0.8571rem + 0.4018vw, 1.5rem);
+  line-height: 1.3;
+  text-align: center;
+   
+  color: rgba(0, 17, 58, 0.6000000238418579);
+  background-color: #F2F3F5;
+  opacity: 0;
+  display: none;
+}
+.esquerda_baixo_btn{
+  width: 90%;
+  height: 20%;
+  background: #00113a;   
+  border-radius: 2vh;
+
+  font-family: "Roobert TWHINT Bold";
+  font-style: normal;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+   
+  color: #F2F3F5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2vh;
+
+
+  font-size: clamp(1rem, 0.8571rem + 0.7143vw, 2rem);
+  line-height: auto;
+ 
+
+  position: relative;
+  z-index: 10;
+  transition: 0.2s;
+
+  --text: #F2F3F5;
+  --font-size: clamp(1rem, 0.8571rem + 0.7143vw, 2rem);
+  --background: #00113a;
+  outline: none;
+  font-size: var(--font-size);
+  background: var(--background);
+  box-shadow: var(--shadow);
+  border: 6px solid transparent;
+}
+.esquerda_baixo_btn:hover {
+  --shadow: var(--shadow-hover);
+  background-color: #F2F3F5;
+  border: 6px solid #2B66FF;
+  --text: #2B66FF;
+  font-weight: 900;
+  transform: scale(0.95);
+}
+
+
+
+/* -------------DIREITA - BASE---------------- */
+
+.direita_vantagens{
+  width: 63%;
+  height: 90%;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #F2F3F5;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* ---DIREITA - IMAGENS--- */
+
+.direita_vantagens_overflow_img{
+  width: 100%;
+  height: 90%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.direita_vantagens_img1{
+  width: 100%;
+  height: 100%;
+  background: url("../img/Vantagens/logo_ani_ceu.gif");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 20px;
+}
+.direita_vantagens_img2{
+  width: 100%;
+  height: 100%;
+  background: url("../img/Vantagens/logo_ani.gif");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 20px;
+}
+.direita_vantagens_img3{
+  width: 100%;
+  height: 100%;
+  background: url("../img/Vantagens/cell_zoom.gif");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 20px;
+}
+.direita_vantagens_img4{
+  width: 100%;
+  height: 100%;
+  background: url("../img/Vantagens/vid_mockup.gif");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 20px;
+}
+
+/* ---DIREITA - CONTROLE--- */
+
+.direita_vantagens_controle{
+  width: 95%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.volta_vantagem{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 50%;
+}
+.direita_vantagens_volta{
+  height: 100%;
+  transition: 0.2s;
+}
+.direita_vantagens_volta:hover{
+  transform: scale(0.9);
+}
+.direita_vantagens_proximo{
+  width: 15%;
+  height: 50%;
+  background: #00113a;
+  border-radius: 32px;
+  cursor: pointer;
+   
+   
+  font-family: "Roobert TWHINT Bold";
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(0.875rem, 0.8571rem + 0.0893vw, 1rem);
+  line-height: 19px;
+  text-align: center;
+  text-decoration: none;
+   
+  color: #ffffff;
+   
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+.direita_vantagens_proximo:hover{
+  transform: scale(0.95);
+}
+.linhas{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 77%;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.direita_vantagens_linha{
+  position: absolute;
+  border-radius: 100px;
+}
+.direita_vantagens_linha_tras{
+
+}
+.direita_vantagens_linha_anda{
+  position: absolute;
+  border-radius: 100px;
+  width: 8%;
+}
+.path {
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ================================================================ */
+/* VANTAGENS TABLET */
+/* ================================================================ */
+@media (max-width: 1023px){
+  .vantagens{
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    gap: 2vh;
+    flex-direction: column;
+  }
+
+
+
+  /* -------------ESQUERDA - BASE---------------- */
+
+  .esquerda_vantagens{
+    margin-top: 3%;
+    min-height: 50%;
+    max-height: 60%;
+    width: 90%;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #F2F3F5;
+  }
+  .esquerda_cima_overflow{
+    height: 50%;
+  }
+  .esquerda_baixo{
+    height: 50%;
+  }
+  .direita_vantagens_controle{
+    height: 20%;
+  }
+  .direita_vantagens_overflow_img{
+    height: 80%;
+  }
+
+
+
+  /* -------------DIREITA - BASE---------------- */
+
+  .direita_vantagens{
+    margin-bottom: 3%;
+    min-height: 35%;
+    max-height: 40%;
+    width: 90%;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #F2F3F5;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .direita_vantagens_linha{
+    stroke-width: 7.5px;
+  }
+  .direita_vantagens_linha_tras{
+    stroke-width: 7.5px;
+  }
+  .linhas{
+    height: 7.5px;
+    width: 75%;
+  }
+}
+
+
+
+/* -------------VANTAGNS - MOBILE---------------- */
+
+.proximo_mobile{
+  height: 100%;
+  transition: 0.2s;
+  display: none;
+}
+@media (max-width: 767px){
+  .proximo_mobile{
+    display: block;
+  }
+  .direita_vantagens_controle{
+    width: 90%;
+  }
+  .esquerda_baixo_btn{
+    width: 85%;
+    border: 3px solid transparent;
+  }
+  .esquerda_baixo_btn:hover {
+    border: 3px solid #2B66FF;
+  }
+  
+  
+  .esquerda_cima_sub_txt2{
+    width: 85%;
+  }
+  .esquerda_cima_sub_txt{
+    width: 85%;
+  }
+  .direita_vantagens_proximo{
+    width: auto;
+    height: 50%;
+    background-color: transparent;
+  }
+  .direita_vantagens_proximo p{
+    display: none;
+  }
+  .direita_vantagens_linha{
+    stroke-width: 6px;
+  }
+  .direita_vantagens_linha_tras{
+    stroke-width: 6px;
+  }
+  .linhas{
+    height: 6px;
+    width: 70%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+  
+/* ================================================================ */
+/* ANIMAÇÃO DO TEXTO (BASE) */
+/* ================================================================ */
+
+
+/* Page Loader */
+.js .loading::before,
+.js .loading::after {
+	content: '';
+	position: fixed;
+	z-index: 1000;
+}
+
+.js .loading::before {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: var(--color-bg);
+}
+
+.js .loading::after {
+	top: 50%;
+	left: 50%;
+	width: 60px;
+	height: 60px;
+	margin: -30px 0 0 -30px;
+	border-radius: 50%;
+	opacity: 0.4;
+	background: var(--color-link);
+	animation: loaderAnim 0.7s linear infinite alternate forwards;
+
+}
+
+@keyframes loaderAnim {
+	to {
+		opacity: 1;
+		transform: scale3d(0.5,0.5,1);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+  
+/* ================================================================ */
+/* PARTE ESCURA TITULO */
+/* ================================================================ */
+
+.parte_escura{
+  width: 100%;
+  height: auto;
+  background-color: #000A23;
+  border-radius: 7vh 7vh 0vh 0vh;
+  z-index: 100;
+  transform: scale(0.9);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+.parte_escura_itens_posição{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+.content {
+	padding: var(--page-padding);
+	display: flex;
+	flex-direction: column;
+	gap: 20vh;
+	width: 100%;
+	position: relative;
+	min-height: auto;
+	place-items: center;
+  margin-bottom: 15vh;
+}
+
+.blur-text {
+	width: 88%;
+	max-width: 88%;
+	min-width: 300px;
+	line-height: 1.2;
+  font-family: "Roobert TWHINT Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(3rem, 2.2857rem + 3.5714vw, 8rem);
+  line-height: 0.99;
+  letter-spacing: -0.04em;
+  text-align: left;
+  margin-top: 20vh;
+   
+  color: #ffffff;
+}
+.blur-text--4 {
+	font-variation-settings: "wght" 400, "wdth" 95;
+	letter-spacing: -0.05em;
+}
+.blur-text--3 {
+	font-variation-settings: "wght" 400, "wdth" 95;
+  font-family: "Roobert TWHINT Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(2.25rem, 1.75rem + 2.5vw, 5.75rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  text-align: justified;
+  margin-bottom: 0;
+}
+.cor1{
+  color: #2B66FF;
+}
+.cor2{
+  color: #BF56FF;
+}
+
+
+
+
+
+
+
+
+
+
+  
+/* ================================================================ */
+/* BENEFÍCIOS */
+/* ================================================================ */
+
+
+
+/* -------------BASE---------------- */
+
+.parte_escura_itens{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 88%;
+  height: auto;
+  position: relative;
+}
+.parte_escura_itens2{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 49%;
+  height: auto;
+  position: relative;
+}
+.parte_escura_item{
+  width: 48%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 35vw;
+  background: #ffffff;
+  border-radius: 35px;
+  transform: translateX(1000px) scaleX(2.5) scaleY(0.2);
+  transform-origin: 0% 50%;
+  opacity: 0;
+}
+.parte_escura_item2{
+  width: 48%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 35vw;
+  background: #ffffff;
+  border-radius: 35px;
+  transform: translateX(1000px) scaleX(2.5) scaleY(0.2);
+  transform-origin: 0% 50%;
+  opacity: 0;
+}
+.parte_escura_item3{
+  width: 48%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 35vw;
+  background: #ffffff;
+  border-radius: 35px;
+  transform: translateX(1000px) scaleX(2.5) scaleY(0.2);
+  transform-origin: 0% 50%;
+  opacity: 0;
+}
+.parte_escura_item4{
+  width: 48%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 35vw;
+  background: #ffffff;
+  border-radius: 35px;
+  transform: translateX(1000px) scaleX(2.5) scaleY(0.2);
+  transform-origin: 0% 50%;
+  opacity: 0;
+}
+
+
+
+/* -------------IMAGEM---------------- */
+
+.parte_escura_cima{
+  width: 100%;
+  height: 321px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.parte_escura_cima_fundo{
+  background-color: #2B66FF;
+  width: 85%;
+  height: 80%;
+  border-radius: 35px;
+  overflow: hidden;
+}
+.parte_escura_cima_fundo0{
+  background-color: #2B66FF;
+  width: 100%;
+  height: 90%;
+  top: 0;
+  border-radius: 35px;
+  overflow: hidden;
+  background: url("../img/itens/Praticidade.png");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+}
+.parte_escura_cima_fundo1{
+  background-color: #2B66FF;
+  width: 100%;
+  height: 100%;
+  border-radius: 35px;
+  overflow: hidden;
+  background: url("../img/itens/Economia.png");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+}
+.parte_escura_cima_fundo2{
+  background-color: #2B66FF;
+  width: 85%;
+  height: 80%;
+  border-radius: 35px;
+  overflow: hidden;
+  background: url("../img/itens/Confianca.png");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+}
+.parte_escura_cima_fundo3{
+  background-color: #2B66FF;
+  width: 85%;
+  height: 80%;
+  border-radius: 35px;
+  overflow: hidden;
+  background: url("../img/itens/Treanquilidade.png");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+}
+
+
+
+/* -------------TEXTOS---------------- */
+
+.parte_escura_titu{
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 85%;
+  font-family: "Roobert TWHINT Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(1.75rem, 1.6429rem + 0.5357vw, 2.5rem);
+  line-height: auto;
+  letter-spacing: -0.04em;
+  text-align: left; 
+  color: #00113a;  
+}
+.parte_escura_txt{
+  width: 85%;
+  font-family: "PP Mori SemiBold";
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(1.125rem, 1.0714rem + 0.2679vw, 1.5rem);
+  line-height: 1.2;
+  text-align: left;
+  margin-bottom: 2em;
+   
+  color: rgba(0, 17, 58, 0.800000011920929);  
+}
+.parte_escura_cima_img_dentro{
+  width: 100%;
+  height: 100%;
+}
+.parte_escura_cima_img2{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.parte_escura_cima_img{
+  width: 100%;
+  height: 90%;
+  position: absolute;
+  top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ================================================================ */
+/* BENEFÍCIOS - TABLET */
+/* ================================================================ */
+
+@media (max-width: 1024px){
+  .parte_escura_cima{
+    height: 231px;
+  }
+  .parte_escura_titu{
+    font-size: clamp(1.5rem, 1.2268rem + 1.061vw, 2.5rem);
+  }
+  .parte_escura_txt{
+    font-size: clamp(1rem, 0.8634rem + 0.5305vw, 1.5rem);
+  }
+}
+
+@media (max-width: 955px){
+  .parte_escura_itens{
+    flex-direction: column;
+  }
+  .parte_escura_itens2{
+    width: 100%;
+    margin-bottom: 4%;
+  }
+  .parte_escura_cima{
+    height: 321px;
+  }
+  .parte_escura_item{
+    height: 503px;
+  }
+  .parte_escura_item2{
+    height: 503px;
+  }
+  .parte_escura_item3{
+    height: 503px;
+  }
+  .parte_escura_item4{
+    height: 503px;
+  }
+  .parte_escura_titu{
+    font-size: clamp(1.75rem, 1.6429rem + 0.5357vw, 2.5rem);
+  }
+  .parte_escura_txt{
+    font-size: clamp(1.125rem, 1.0714rem + 0.2679vw, 1.5rem);
+  }
+}
+
+@media (max-width: 555px){
+  .parte_escura_itens2{
+    flex-direction: column;
+  }
+  .parte_escura_cima{
+    height: 321px;
+  }
+  .parte_escura_item{
+    width: 100%;
+    margin-bottom: 4%;
+  }
+  .parte_escura_item2{
+    width: 100%;
+  }
+  .parte_escura_item3{
+    width: 100%;
+    margin-bottom: 4%;
+  }
+  .parte_escura_item4{
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+  
+/* ================================================================ */
+/* VÍDEO PITCH */
+/* ================================================================ */
+
+aside{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.video_titu{
+  margin-top: 5vh;
+  height: 35vh;
+  width: 100%;
+  position: relative;
+  display: block;
+}
+.img_video{
+  height: 35vh;
+  position: absolute;
+}
+.img_video_mobile{
+  height: 35vh;
+  position: absolute;
+  display: none;
+}
+.video_pitch{
+  border-radius: 30px;
+  box-shadow: 0px 0px 250px 0px rgba(43, 102, 255, 0.2);
+}
+@media (max-width: 1500px){
+  .video_pitch {
+    width: 88%;
+  }
+}
+@media (max-width: 767px){
+  .video_pitch {
+    width: 88%;
+    height: 318px;
+  }
+  .img_video_mobile{
+    display: block;
+  }
+  .img_video{
+    display: none;
+  }
+}
+.sub_titu_video{
+  width: 88%;
+  margin-top: 20px;
+  font-family: "Roobert TWHINT SemiBold";
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(1.25rem, 1.1071rem + 0.7143vw, 2.25rem);
+  line-height: auto;
+  letter-spacing: -0.04em;
+  text-align: center;
+   
+  color: #ffffff;  
+}
+
+
+
+
+
+
+
+
+
+
+  
+/* ================================================================ */
+/* PARTE ESCURA BASE 2 */
+/* ================================================================ */
+
+.parte_escura2{
+  width: 100%;
+  height: auto;
+  background-color: #000A23;
+  border-radius: 0vh 0vh 0vh 0vh;
+  transform: scale(1);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  margin-top: -2vh;
+}
+
+
+
+
+
+
+
+
+
+
+  
+/* ================================================================ */
+/* EQUIPE */
+/* ================================================================ */
+
+
+
+/* -------------BASE---------------- */
+
+.equipe{
+  margin-bottom: 10vh;
+  display: block;
+  margin-top: -8vh;
+  transform: scale(0.9);
+  width: 88%;
+  height: 561px;
+  position: relative;
+
+  border-radius: 100px; /*1*/
+  border: 3px solid transparent; /*2*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.borda_fundo{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+
+  border-radius: 100px; /*1*/
+  border: 3px solid transparent; /*2*/
+  background: linear-gradient(90deg, rgba(43, 102, 255, 1) 0%, rgba(26, 61, 153, 1) 100%) border-box; /*3*/
+  -webkit-mask: /*4*/
+     linear-gradient(#fff 0 0) padding-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor; /*5'*/
+          mask-composite: exclude; /*5*/
+}
+.pessoa{
+  width: 100%;
+  border-style: solid;
+  border-color: rgba(43, 102, 255, 0.3);
+  border-width: 0px 0px 3px 0px;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pessoa2{
+  width: 100%;
+  border-style: solid;
+  border-color: rgba(43, 103, 255, 0);
+  border-width: 0px 0px 3px 0px;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+/* -------------FOTO E NOME---------------- */
+
+.pessoa_nome_foto{
+  height: 68%;
+  margin-left: 3.4%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.pessoa_foto1{
+  width: 155px;
+  height: 100%;
+  background: url("../img/equipe/leo.png");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1000;
+  border-radius: 15px;
+  margin-right: 2vw;
+}
+.pessoa_foto2{
+  width: 155px;
+  height: 100%;
+  background: url("../img/equipe/mi.png");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1000;
+  border-radius: 15px;
+  margin-right: 2vw;
+}
+.pessoa_foto3{
+  width: 155px;
+  height: 100%;
+  background: url("../img/equipe/raul.png");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1000;
+  border-radius: 15px;
+  margin-right: 2vw;
+}
+.pessoa_foto4{
+  width: 155px;
+  height: 100%;
+  background: url("../img/equipe/logo_vapt-vupt.png");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1000;
+  border-radius: 15px;
+  margin-right: 2vw;
+}
+.nome{
+  font-family: "Roobert TWHINT Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(1.25rem, 1rem + 1.25vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  text-align: left;
+   
+  color: #ffffff;
+  margin: 0;  
+}
+.rm{
+  margin: 0;
+  margin-top: 1.5vh;
+  font-family: "PP Mori SemiBold";
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(0.75rem, 0.6786rem + 0.3571vw, 1.25rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  text-align: left;
+   
+  color: rgba(255, 255, 255, 0.6000000238418579);  
+}
+
+
+
+/* -------------TRABALHO E GITHUB---------------- */
+
+.pessoa_gihub{
+  height: 68%;
+  margin-right: 3.4%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-left: 3vw;
+}
+.trabalho{
+  font-family: "PP Mori SemiBold";
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(1.125rem, 1.0714rem + 0.2679vw, 1.5rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  text-align: right;
+   
+  color: rgba(255, 255, 255, 0.800000011920929);
+  margin: 0;
+  margin-right: 3vh;
+}
+.github{
+  width: 177px;
+  height: 50%;
+  background: #2b66ff;
+  border-radius: 15px;
+
+  font-family: "Roobert TWHINT Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(0.8125rem, 0.7143rem + 0.4911vw, 1.5rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  text-align: left;
+  text-decoration: none;
+  
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: 0.2s;
+}
+.github:hover{
+  transform: scale(0.95);
+  box-shadow: 0px 0px 40px 0px rgba(43, 103, 255, 0.432);
+}
+
+
+
+/* -------------GITHUB VAPT-VUPT---------------- */
+
+.equipe2{
+  margin-bottom: 25vh;
+  display: block;
+  margin-top: -8vh;
+  transform: scale(0.9);
+  width: 88%;
+  height: 260px;
+  position: relative;
+
+  border-radius: 100px; /*1*/
+  border: 3px solid transparent; /*2*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.borda_fundo2{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+
+  border-radius: 100px; /*1*/
+  border: 3px solid transparent; /*2*/
+  background: linear-gradient(90deg, rgba(43, 102, 255, 1) 0%, rgba(26, 61, 153, 1) 100%) border-box; /*3*/
+  -webkit-mask: /*4*/
+     linear-gradient(#fff 0 0) padding-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor; /*5'*/
+          mask-composite: exclude; /*5*/
+}
+.borda_fundo3{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -2;
+
+  border-radius: 100px; /*1*/
+  background-color: #00113A;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ================================================================ */
+/* EQUIPE */
+/* ================================================================ */
+@media (max-width: 955px){
+  .equipe{
+    height: 500px;
+  }
+  .equipe2{
+    height: 250px;
+  }
+  .pessoa_nome_foto{
+    margin-left: 4.4%;
+  }
+  .pessoa_gihub{
+    margin-right: 4.4%;
+  }
+  .trabalho{
+    display: none;
+  }
+  .github{
+    width: 135px;
+  }
+  .pessoa_foto1{
+    width: 125px;
+  }
+  .pessoa_foto2{
+    width: 125px;
+  }
+  .pessoa_foto3{
+    width: 125px;
+  }
+  .pessoa_foto4{
+    width: 125px;
+  }
+}
+@media (max-width: 555px){
+  .equipe{
+    height: 340px;
+  }
+  .equipe2{
+    height: 140px;
+  }
+  .rm{
+    margin-top: 1vh;
+  }
+  .pessoa_nome_foto{
+    margin-left: 4.4%;
+  }
+  .pessoa_gihub{
+    margin-right: 4.4%;
+  }
+  .trabalho{
+    display: none;
+  }
+  .github{
+    width: 90px;
+    height: 70%;
+    border-radius: 8px;
+  }
+  .pessoa_foto1{
+    width: 62px;
+    border-radius: 8px;
+  }
+  .pessoa_foto2{
+    width: 62px;
+    border-radius: 8px;
+  }
+  .pessoa_foto3{
+    width: 62px;
+    border-radius: 8px;
+  }
+  .pessoa_foto4{
+    width: 62px;
+    border-radius: 8px;
+  }
+}
+
+
+
+
+
+
+
+
+
+  
+/* ================================================================ */
+/* CADASTRO */
+/* ================================================================ */
+
+
+
+/* -------------BASE---------------- */
+
+.sticky_cadatre{
+  width: 100%;
+  height: 215vh;
+  z-index: 0;
+}
+
+.cadastre{
+  width: 100%;
+  height: 100vh;
+  margin-top: -100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+
+/* -------------IMAGEM---------------- */
+
+.cadastre_img{
+  width: 50%;
+  height: 100%;
+  background: url("../img/cadastre/mockup.png");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+/* -------------TEXTOS---------------- */
+
+.cadastre_textos{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* ---TITULO--- */
+
+.cadastre_titu{
+  width: 75%;
+  font-family: "Roobert TWHINT Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(2.25rem, 2rem + 1.25vw, 4rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  text-align: left;
+   
+  color: #00113a;
+  margin-bottom: 6.5vh;
+}
+
+/* ---TOPICOS--- */
+
+.cadastre1{
+  width: 75%;
+  height: 90px;
+  background: rgba(0, 17, 58, 0.05000000074505806);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.7vh;
+}
+.cadastre2{
+  width: 75%;
+  height: 90px;
+  background: rgba(0, 17, 58, 0.05000000074505806);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.7vh;
+}
+.cadastre3{
+  width: 75%;
+  height: 90px;
+  background: rgba(0, 17, 58, 0.05000000074505806);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.7vh;
+}
+.cadastre1_titu{
+  width: 95px;
+   
+  font-family: "Roobert TWHINT Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(1.125rem, 1rem + 0.625vw, 2rem);
+  line-height: auto;
+  letter-spacing: -0.04em;
+  text-align: center;
+   
+  color: #2b66ff;
+  margin: 0;
+}
+.cadastre_txt{
+  font-family: "Roobert TWHINT Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(1.125rem, 1.0357rem + 0.4464vw, 1.75rem);
+  line-height: auto;
+  letter-spacing: -0.04em;
+  text-align: left;
+   
+  color: rgba(0, 17, 58, 0.800000011920929);
+  margin: 0;  
+  margin-right: 20px;
+}
+
+/* ---BOTÕES--- */
+
+.cadastre_btn_cadastre{
+  width: 75%;
+  height: 115px;
+  background: #2b66ff;
+  border-radius: 15px;
+
+  font-family: "Roobert TWHINT Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 1.3929rem + 0.5357vw, 2.25rem);
+  line-height: auto;
+  letter-spacing: -0.04em;
+  text-align: center;
+  text-decoration: none;
+   
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.7vh;
+  margin-top: 6vh;
+
+  position: relative;
+  z-index: 1;
+  transition: 0.2s;
+
+  --text: #ffffff;
+  --font-size: clamp(1.5rem, 1.3929rem + 0.5357vw, 2.25rem);
+  --background: #2B66FF;
+  outline: none;
+  font-size: var(--font-size);
+  background: var(--background);
+  box-shadow: var(--shadow);
+  border: 6px solid transparent;
+}
+.cadastre_btn_cadastre:hover {
+  --shadow: var(--shadow-hover);
+  background-color: #ffffff;
+  border: 6px solid #2B66FF;
+  --text: #2B66FF;
+  font-weight: 900;
+}
+
+.cadastre_btn_login{
+  width: 75%;
+  height: 87px;
+  background: rgba(43, 102, 255, 0.05000000074505806);
+  border-radius: 15px;
+
+  font-family: "Roobert TWHINT Semibold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(1rem, 0.9286rem + 0.3571vw, 1.5rem);
+  line-height: auto;
+  letter-spacing: -0.04em;
+  text-align: center;
+  text-decoration: none;
+   
+  color: rgba(0, 17, 58, 0.800000011920929);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+.cadastre_btn_login:hover{
+  transform: scale(0.95);
+}
+
+/* ---ANIMAÇÕES--- */
+
+.cadastre_animacao{
+  transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+  transform-origin: 50% 100%;
+  filter: blur(40px);
+  opacity: 0;
+}
+.cadastre_animacao1{
+  transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+  transform-origin: 50% 100%;
+  filter: blur(40px);
+  opacity: 0;
+}
+.cadastre_animacao2{
+  transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+  transform-origin: 50% 100%;
+  filter: blur(40px);
+  opacity: 0;
+}
+.cadastre_animacao3{
+  transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+  transform-origin: 50% 100%;
+  filter: blur(40px);
+  opacity: 0;
+}
+.cadastre_animacao4{
+  transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+  transform-origin: 50% 100%;
+  filter: blur(40px);
+  opacity: 0;
+}
+.cadastre_animacao5{
+  transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+  transform-origin: 50% 100%;
+  filter: blur(40px);
+  opacity: 0;
+}
+@keyframes slide-in-blurred-bottom {
+  0% {
+    -webkit-transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+            transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+    -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+    -webkit-filter: blur(40px);
+            filter: blur(40px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0) scaleY(1) scaleX(1);
+            transform: translateY(0) scaleY(1) scaleX(1);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ================================================================ */
+/* CADASTRO - MOBILE */
+/* ================================================================ */
+
+@media (max-width: 955px){
+  .cadastre{
+    display: block;
+  }
+  .cadastre_img{
+    width: 100%;
+    height: 40%;
+  }
+  .cadastre_textos{
+    width: 100%;
+    height: 60%;
+  }
+  .cadastre_titu{
+    margin-bottom: 25px;
+    margin-top: 30px;
+    text-align: center;
+  }
+  .cadastre1_titu{
+    width: 15%;
+  }
+  .cadastre1{
+    width: 88%;
+    height: 84px;
+  }
+  .cadastre2{
+    width: 88%;
+    height: 84px;
+  }
+  .cadastre3{
+    width: 88%;
+    height: 84px;
+  }
+  .cadastre_btn_cadastre{
+    width: 88%;
+    margin-top: 22px;
+    border: 4px solid transparent;
+  }
+  .cadastre_btn_cadastre:hover {
+    --shadow: var(--shadow-hover);
+    background-color: #ffffff;
+    border: 4px solid #2B66FF;
+    --text: #2B66FF;
+    font-weight: 900;
+  }  
+  .cadastre_btn_login{
+    width: 88%;
+    margin-bottom: 30px;
+  }
+}
+
+
+
+
+
+
+
+
+
+  
+/* ================================================================ */
+/* RODAPE */
+/* ================================================================ */
+
+
+
+/* -------------BASE---------------- */
+
+footer{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.linha_rodape{
+  width: 93%;
+  height: 160px;
+  border-style: solid;
+  border-color: rgba(0, 17, 58, 0.1);
+  border-width: 0px 0px 3px 0px;
+}
+
+
+
+/* -------------LINKS---------------- */
+
+.rodape_links{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.sitemap{
+  display: flex;
+  flex-direction: column;
+}
+.sitemap4{
+  display: flex;
+  flex-direction: column;
+  margin-right: 3vw;
+  margin-left: 4vw;
+}
+.sitemap_titu{
+  /* Rectangle 242 (rectangle) */
+  width: 192px;
+  height: 56px;
+  margin: 0;
+  
+  font-family: "Roobert TWHINT Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(1.25rem, 1.1786rem + 0.3571vw, 1.75rem);
+  line-height: 25px;
+  text-align: left;
+  
+  color: #00113a;
+  display: flex;
+  align-items: center;
+}
+.dentro_sitemap{
+  position: absolute;
+}
+
+.anchor2{
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border: 2px solid rgba(0, 17, 58, 0.08);
+
+  border-color: rgba(0, 17, 58, 0.08);
+  border-width: 0px 0px 2px 0px;
+
+  width: 192px;
+  height: 56px;
+  position: relative;
+  margin: 0;
+
+  font-family: "Roobert TWHINT SemiBold";
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(1.25rem, 1.1786rem + 0.3571vw, 1.75rem);
+  line-height: 25px;
+  text-align: left;
+  text-decoration: none;
+   
+  color: rgba(0, 17, 58, 0.5);
+  display: flex;
+  align-items: center;
+  transition: 0.5s;
+}
+.anchor2:hover{
+  color: rgb(0, 17, 58);
+}
+
+/* ANIMAÇÃO HOVER ANCHOR */
+.menu-item2 {
+  text-indent: 0;
+  cursor: pointer;
+  z-index: 100;
+  pointer-events: auto;
+}
+.menu-item2::after {
+  border-radius: 10px;
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #2B66FF;
+  z-index: -1;
+  transform: scale3d(0.001,1,1);
+  opacity: 0;
+  transform-origin: 100% 50%;
+  transition: transform 0.3s cubic-bezier(0.2,1,0.3,1), opacity 0.1s 0.2s linear;
+}
+.menu-item2.menu-item2--active::after,
+.content--menu .menu-item2.menu-item2--active:hover::after,
+.menu-item2:hover::after {
+  opacity: 1;
+  transform: scale3d(1,1,1);
+  transform-origin: 0% 50%;
+  transition: transform 0.7s cubic-bezier(0.2,1,0.3,1), opacity 0.1s linear;
+}
+.content--menu .menu-item2::after {
+  transform-origin: 0% 50%;
+}
+.content--menu .menu-item2:hover::after {
+  transform: scale3d(0.15,1,1);
+}
+.splitting .word {
+  text-indent: 0;
+}
+.menu-item2 span {
+  pointer-events: none;
+}
+
+
+/* -------------RODAPE BAIXO---------------- */
+
+.tudo_rodape_baixo{
+  width: 100%;
+  height: 15vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.link_porto_mobile{
+  width: 90%;
+  height: 30%;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  border-style: solid;
+  border-color: rgba(0, 17, 58, 0.1);
+  border-width: 3px 0px 0px 0px;
+}
+.logo_footer{
+  height: 30%;
+  opacity: 0.5;
+  margin-left: 3%;
+}
+.link_porto_footer{
+  width: auto;
+  font-family: "Roobert TWHINT SemiBold";
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(1.25rem, 1rem + 1.25vw, 1.5rem);
+  line-height: 24px;
+  text-align: left;
+  text-decoration: none;
+  
+  color: rgba(0, 17, 58, 0.5);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 3%;
+}
+.seta_rodape{
+  margin-left: 1vw;
+}
+.rodape_baixo{
+  width: 100%;
+  height: 100%;
+  border-style: solid;
+  border-color: rgba(0, 17, 58, 0.1);
+  border-width: 3px 0px 0px 0px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo_rodape{
+  margin-left: 5%;
+  height: 50%;
+  width: auto;
+}
+.lerami{
+  height: 40%;
+  font-family: "Roobert TWHINT Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(0.875rem, 0.75rem + 0.625vw, 1.75rem);
+  line-height: auto;
+  letter-spacing: -0.04em;
+  text-align: right;
+  text-decoration: none;
+   
+  color: rgba(0, 17, 58, 0.6000000238418579);
+  display: flex;
+  align-items: flex-end;
+}
+.voltar_topo{
+  height: 40%;
+  font-family: "Roobert TWHINT SemiBold";
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(1.25rem, 1.1429rem + 0.5357vw, 2rem);
+  line-height: auto;
+  letter-spacing: -0.04em;
+  text-align: right;
+  text-decoration: none;
+   
+  color: rgba(0, 17, 58, 0.6000000238418579);
+  display: flex;
+  align-items: flex-end;
+  margin-right: 5%;
+  transition: 0.2s;
+  stroke-opacity:0.6;
+  stroke: #00113A;
+}
+.voltar_topo:hover{
+  color: #2B66FF;
+  stroke: #2B66FF;
+  stroke-opacity:1;
+}
+.voltar_topo_mobile{
+  height: auto;
+  font-family: "Roobert TWHINT SemiBold";
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(1.25rem, 1.1429rem + 0.5357vw, 2rem);
+  line-height: auto;
+  letter-spacing: -0.04em;
+  text-align: right;
+  text-decoration: none;
+   
+  color: rgba(0, 17, 58, 0.6000000238418579);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4%;
+  display: none;
+}
+
+
+
+/* -------------IMAGEM---------------- */
+
+.rodape_img{
+  width: 55%;
+  height: 70%;
+  background: url("../img/rodape/img_rodape.png");
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: 3vh;
+  border-radius: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ================================================================ */
+/* RODAPE - MOBILE */
+/* ================================================================ */
+.rodape_todos_links{
+  width: 90%;
+  height: 45%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10vh;
+  margin-top: 5vh;
+}
+.rodape_img_mobile{
+  width: 100%;
+  height: 50%;
+  background: url("../img/rodape/img_rodape.png");
+  background-position: 50% 35%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  display: none;
+}
+.logo_rodape_mobile{
+  display: none;
+  width: 90%;
+}
+
+@media (max-width: 955px){
+  .rodape_todos_links{
+    height: 60%;
+    align-items: flex-start;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+  }
+  .rodape_img_mobile{
+    display: block;
+  }
+  .rodape_img{
+    display: none;
+  }
+  .rodape_links{
+    width: 80%;
+    margin-left: 3%;
+    margin-top: 2vh;
+  }
+  .sitemap_titu{
+    height: 47px;
+  }
+  .anchor2{
+    height: 47px;
+  }
+}
+@media (max-width: 640px){
+  .tudo_rodape_baixo{
+    height: 90vw;
+  }
+  .rodape_baixo{
+    flex-direction: column;
+    justify-content: space-around;
+    height: 70%;
+  }
+  .rodape_img_mobile{
+    display: none;
+  }
+  .voltar_topo_mobile{
+    display: block;
+  }
+  .logo_rodape_mobile{
+    display: block;
+  }
+  .logo_rodape{
+    display: none;
+  }
+  .voltar_topo{
+    display: none;
+  }
+  .lerami{
+    height: auto;
+    margin-bottom: 4%;
+  }
+  .anchor2{
+    width: 100%;
+  }
+  .sitemap{
+    width: 50%;
+  }
+  .sitemap4{
+    width: 50%;
+  }
+  .rodape_links{
+    width: 90%;
+    margin-top: 0;
+  }
+  .link_porto_mobile{
+    display: flex;
+  }
+}
