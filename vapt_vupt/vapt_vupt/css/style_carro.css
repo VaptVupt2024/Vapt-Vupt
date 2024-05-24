@@ -1,0 +1,105 @@
+/* ================================================================ */
+/* TUDO CARRO */
+/* ================================================================ */
+
+.TUDO_CARRO{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    display: none;
+    background-color: #ebebeb;
+}
+.dentro_carro{
+    width: 95%;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+}
+
+
+
+
+
+/* ------------- ESQUERDA ---------------- */
+.esquerda_carro_sticky{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25vw;
+    height: 100vh;
+    padding-top: 112px;
+    box-sizing: border-box;
+}
+.esquerda_carro{
+    width: 90%;
+    height: 93%;
+    background-color: #2B66FF;
+    gap: 1vh;
+    padding: 1%;
+    margin-top: 2.5%;
+    box-sizing: border-box;
+}
+
+
+
+
+
+/* ------------- DIREITA ---------------- */
+.direita_carro{
+    width: 75%;
+    height: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 112px;
+    box-sizing: border-box;
+}
+.titu_sessao_carro{
+    font-family: "Roobert TWHINT SemiBold";
+    font-style: normal;
+    font-weight: 600;
+    font-size: clamp(1.5rem, 1.4643rem + 0.1786vw, 1.75rem);
+    line-height: 42px;
+    letter-spacing: -0.04em;
+    text-align: left;
+    margin-top: 1.3em;
+    margin-bottom: 0.8em;
+    margin-left: 0.2em;
+     
+    color: rgba(0, 17, 58, 0.800000011920929);
+}
+.servicos{
+    position: relative;
+    display: flex;
+    gap: 2vh;
+}
+.servico{
+    position: relative;
+    width: 100%;
+    height: 10vh;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.leva_traz{
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+.leva_traz_img{
+    width: 70%;
+    height: 100%;
+}
+.leva_traz_textos{
+    width: 30%;
+    height: 100%;
+}
+
