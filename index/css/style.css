@@ -1486,7 +1486,7 @@ nav.menu-opened .ani_mob:nth-child(10) {
 .direita_vantagens_img1{
   width: 100%;
   height: 100%;
-  background: url("../img/Vantagens/logo_ani_ceu.gif");
+  background: url("../img/Vantagens/logo_ceu.jpg");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
@@ -1495,7 +1495,7 @@ nav.menu-opened .ani_mob:nth-child(10) {
 .direita_vantagens_img2{
   width: 100%;
   height: 100%;
-  background: url("../img/Vantagens/logo_ani.gif");
+  background: url("../img/Vantagens/precos.png");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
@@ -1504,7 +1504,7 @@ nav.menu-opened .ani_mob:nth-child(10) {
 .direita_vantagens_img3{
   width: 100%;
   height: 100%;
-  background: url("../img/Vantagens/cell_zoom.gif");
+  background: url("../img/Vantagens/tranquilidade.png");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
@@ -1513,7 +1513,7 @@ nav.menu-opened .ani_mob:nth-child(10) {
 .direita_vantagens_img4{
   width: 100%;
   height: 100%;
-  background: url("../img/Vantagens/vid_mockup.gif");
+  background: url("../img/Vantagens/tecnologias.png");
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
